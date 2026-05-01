@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join the Tax Titan Protocol™ | TaxZilla</title>
+    <meta
+      name="description"
+      content="Apply to TaxZilla's monthly tax strategy and bookkeeping services. Complete your profile to start your transition from Tax Prey to Tax Predator."
+    />
+    <meta name="robots" content="index, follow" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zillaNavy: '#231f20',
+              zillaGold: '#2e3192',
+              zillaSteel: '#414042',
+              zillaMint: '#414042'
+            },
+            fontFamily: {
+              display: ['Bebas Neue', 'sans-serif'],
+              body: ['Manrope', 'sans-serif']
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(14px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              'fade-up': 'fadeUp 700ms ease-out both'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-[#231f20] font-body text-zillaNavy antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-zillaNavy focus:shadow">
+      Skip to main content
+    </a>
+
+    <header class="bg-[#231f20]/60 backdrop-blur-md shadow-md fixed w-full top-0 z-50 border-b border-[#414042]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        
+        <a href="./index.html#top" class="flex items-center">
+          <img src="./assets/logo.png" alt="Taxzilla Logo" class="h-14 w-auto">
+        </a>
+
+        <button
+          id="menuButton"
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-md border border-white/30 px-4 py-3 text-white"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          Menu
+        </button>
+
+        <nav class="hidden md:flex space-x-8 items-center" aria-label="Primary navigation">
+          <a href="./index.html#about" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">About</a>
+          <a href="./index.html#features" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">Features</a>
+          <a href="./index.html#contact" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">Contact</a>
+          <a href="./application.html" class="bg-[#D4AF37] hover:bg-[#b5952f] text-[#231f20] px-5 py-2 rounded-md font-bold transition-colors duration-200 shadow-md">Apply Now</a>
+        </nav>
+        
+      </div>
+
+      <nav id="mobileMenu" class="hidden md:hidden border-t border-[#414042] bg-[#231f20]/95 px-4 py-4" aria-label="Mobile navigation">
+        <div class="flex flex-col gap-3">
+          <a href="./index.html#about" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">About</a>
+          <a href="./index.html#features" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">Features</a>
+          <a href="./index.html#contact" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">Contact</a>
+          <a href="./application.html" class="bg-[#D4AF37] hover:bg-[#b5952f] text-[#231f20] px-5 py-2 rounded-md font-bold transition-colors duration-200 shadow-md text-center">Apply Now</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" class="mx-auto w-full max-w-5xl px-4 py-10 pt-32 sm:px-6 lg:px-8" aria-labelledby="application-title">
+      <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <p class="text-sm font-bold uppercase tracking-[0.18em] text-zillaSteel">Onboarding Intake</p>
+        <div class="mt-3 flex items-start justify-between gap-4">
+          <h1 id="application-title" class="font-display text-5xl leading-none text-zillaNavy sm:text-6xl">Secure Your Wealth Fortress</h1>
+          <img
+            src="./assets/mascot.png"
+            alt="King Zil mascot"
+            class="h-14 w-auto animate-fade-up object-contain motion-reduce:animate-none"
+            width="100"
+            height="100"
+          />
+        </div>
+        <p class="mt-4 max-w-3xl text-zillaSteel">
+          Complete the application below to see if you qualify for the Tax Titan Protocol™. Our AI + Expert hybrid system will analyze your profile to identify hidden tax leaks.
+        </p>
+
+        <div
+          id="formAlert"
+          class="mt-6 hidden rounded-md border px-4 py-3 text-sm font-semibold"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+        <form id="applicationForm" class="mt-8 grid gap-6" novalidate>
+          <fieldset class="grid gap-5 rounded-xl border border-slate-200 p-4 sm:grid-cols-2 sm:p-6">
+            <legend class="px-2 text-base font-bold text-zillaNavy">Personal Details</legend>
+
+            <div class="sm:col-span-2">
+              <label class="mb-1 block text-sm font-semibold" for="fullName">Full Name *</label>
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                autocomplete="name"
+                required
+                class="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="fullName-error"
+              />
+              <p id="fullName-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="email">Email *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="email-error"
+              />
+              <p id="email-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="phone">Phone *</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                required
+                class="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="phone-error"
+              />
+              <p id="phone-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <fieldset class="grid gap-5 rounded-xl border border-slate-200 p-4 sm:grid-cols-2 sm:p-6">
+            <legend class="px-2 text-base font-bold text-zillaNavy">Business & Tax Profile</legend>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="clientType">Client Type *</label>
+              <select
+                id="clientType"
+                name="clientType"
+                required
+                class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="clientType-error"
+              >
+                <option value="">Select one</option>
+                <option value="w2">High-Income W2 Earner</option>
+                <option value="business">Small Business Owner</option>
+                <option value="both">Both W2 + Business</option>
+              </select>
+              <p id="clientType-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="serviceInterest">Service Interest *</label>
+              <select
+                id="serviceInterest"
+                name="serviceInterest"
+                required
+                class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="serviceInterest-error"
+              >
+                <option value="">Select one</option>
+                <option value="standard">I just need my annual taxes filed (Standard)</option>
+                <option value="growth">I want to lower my taxes and start a strategy (Growth)</option>
+                <option value="titan">I need full business bookkeeping and wealth defense (Titan)</option>
+              </select>
+              <p id="serviceInterest-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="annualIncome">Estimated Annual Income *</label>
+              <select
+                id="annualIncome"
+                name="annualIncome"
+                required
+                class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="annualIncome-error"
+              >
+                <option value="">Select one</option>
+                <option value="under-100k">Under $100k</option>
+                <option value="100k-250k">$100k - $250k</option>
+                <option value="250k-500k">$250k - $500k</option>
+                <option value="500k+">$500K+</option>
+              </select>
+              <p id="annualIncome-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="currentProfession">Current Profession/Industry *</label>
+              <input
+                id="currentProfession"
+                name="currentProfession"
+                type="text"
+                required
+                class="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="currentProfession-error"
+              />
+              <p id="currentProfession-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="businessName">Business Name (required for business owners)</label>
+              <input
+                id="businessName"
+                name="businessName"
+                type="text"
+                class="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="businessName-error"
+              />
+              <p id="businessName-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="monthlyReceipts">Approx. Monthly Receipts *</label>
+              <input
+                id="monthlyReceipts"
+                name="monthlyReceipts"
+                type="number"
+                min="0"
+                max="20000"
+                required
+                class="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="monthlyReceipts-error"
+              />
+              <p id="monthlyReceipts-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="state">State (US) *</label>
+              <input
+                id="state"
+                name="state"
+                type="text"
+                maxlength="2"
+                required
+                class="w-full uppercase rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="state-error"
+              />
+              <p id="state-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="consultationDate">Preferred Consultation Date *</label>
+              <input
+                id="consultationDate"
+                name="consultationDate"
+                type="date"
+                required
+                class="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="consultationDate-error"
+              />
+              <p id="consultationDate-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <fieldset class="grid gap-5 rounded-xl border border-slate-200 p-4 sm:p-6">
+            <legend class="px-2 text-base font-bold text-zillaNavy">Operational Details</legend>
+
+            <div>
+              <p class="mb-2 text-sm font-semibold">Current bookkeeping method *</p>
+              <div class="grid gap-2 sm:grid-cols-3" aria-describedby="bookkeepingMethod-error">
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="radio" name="bookkeepingMethod" value="manual" class="accent-zillaNavy" />
+                  Manual entry
+                </label>
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="radio" name="bookkeepingMethod" value="spreadsheet" class="accent-zillaNavy" />
+                  Spreadsheet-based
+                </label>
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="radio" name="bookkeepingMethod" value="software" class="accent-zillaNavy" />
+                  Accounting software
+                </label>
+              </div>
+              <p id="bookkeepingMethod-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <p class="mb-2 text-sm font-semibold">Do you currently track mileage? *</p>
+              <div class="flex flex-wrap gap-3" aria-describedby="mileageTracking-error">
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="radio" name="mileageTracking" value="yes" class="accent-zillaNavy" />
+                  Yes
+                </label>
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="radio" name="mileageTracking" value="no" class="accent-zillaNavy" />
+                  No
+                </label>
+              </div>
+              <p id="mileageTracking-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <p class="mb-2 text-sm font-semibold">Services of interest * (select at least one)</p>
+              <div class="grid gap-2 sm:grid-cols-2" aria-describedby="services-error">
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="checkbox" name="services" value="monthly-bookkeeping" class="accent-zillaNavy" />
+                  Monthly bookkeeping
+                </label>
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="checkbox" name="services" value="tax-preparation" class="accent-zillaNavy" />
+                  End-of-year tax preparation
+                </label>
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="checkbox" name="services" value="tax-strategy" class="accent-zillaNavy" />
+                  Aggressive tax strategy
+                </label>
+                <label class="flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+                  <input type="checkbox" name="services" value="wealth-advisory" class="accent-zillaNavy" />
+                  Wealth advisory readiness
+                </label>
+              </div>
+              <p id="services-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="mb-1 block text-sm font-semibold" for="painPoint">Primary Financial Goal or Pain Point *</label>
+              <textarea
+                id="painPoint"
+                name="painPoint"
+                rows="4"
+                minlength="20"
+                maxlength="500"
+                required
+                class="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-zillaSteel focus:outline-none focus:ring-2 focus:ring-zillaSteel/30"
+                aria-describedby="painPoint-error"
+              ></textarea>
+              <p id="painPoint-error" class="mt-1 text-sm text-red-700" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <fieldset class="grid gap-4 rounded-xl border border-slate-200 p-4 sm:p-6">
+            <legend class="px-2 text-base font-bold text-zillaNavy">Consent</legend>
+            <label class="flex items-start gap-3" for="consent">
+              <input id="consent" name="consent" type="checkbox" class="mt-1 accent-zillaNavy" />
+              <span class="text-sm text-slate-700">
+                I confirm that the information submitted is accurate and I agree to be contacted by TaxZilla regarding my
+                application. *
+              </span>
+            </label>
+            <p id="consent-error" class="text-sm text-red-700" aria-live="polite"></p>
+          </fieldset>
+
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-sm text-zillaSteel">Fields marked with * are required.</p>
+            <div class="flex flex-wrap gap-3">
+              <button
+                type="button"
+                id="clearFormButton"
+                class="rounded-md border border-zillaNavy bg-transparent px-6 py-3 text-base font-bold text-zillaNavy transition-colors duration-200 hover:bg-zillaNavy hover:text-white"
+              >
+                Clear Form
+              </button>
+              <button
+                type="submit"
+                class="rounded-md bg-gradient-to-r from-[#D4AF37] to-[#b5952f] text-white px-6 py-3 text-base font-bold transition-opacity duration-200 hover:opacity-90 shadow-md"
+              >
+                Submit Application
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="bg-white py-12 border-t border-gray-200" role="contentinfo">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+        
+        <div class="flex items-center space-x-4 mb-6 md:mb-0">
+          <img src="./assets/mascot.png" alt="King Zil Mascot" class="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 mb-6 drop-shadow-md">
+        </div>
+
+        <div class="text-center md:text-right text-sm text-[#414042]">
+          <p class="mb-2 font-semibold text-[#2e3192] text-lg">
+            Ready to build your tax advantage?
+          </p>
+          <p class="mb-4">
+            <a href="mailto:hello@taxzilla.co" class="text-[#D4AF37] hover:text-[#b5952f] transition-colors duration-200 text-xl font-bold">
+              hello@taxzilla.co
+            </a>
+          </p>
+          <p class="text-xs text-gray-500">&copy; 2026 Taxzilla. All rights reserved. | <span class="text-[#2e3192] font-medium">Tax Strategy • Bookkeeping • Financial Advisory</span></p>
+        </div>
+
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+          const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+          menuButton.setAttribute('aria-expanded', String(!expanded));
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            menuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
+    <script src="./validation.js"></script>
+  </body>
+</html>

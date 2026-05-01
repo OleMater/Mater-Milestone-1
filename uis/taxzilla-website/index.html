@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaxZilla | From Tax Prey to Tax Predator</title>
+    <meta
+      name="description"
+      content="TaxZilla helps high-income W2 earners and small business owners plug tax leaks, automate bookkeeping, and build long-term wealth strategies."
+    />
+    <meta name="robots" content="index, follow" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zillaNavy: '#231f20',
+              zillaGold: '#D4AF37',
+              zillaSteel: '#414042',
+              zillaMint: '#2e3192',
+              zillaRoyal: '#2e3192',
+              zillaGoldDark: '#b5952f'
+            },
+            fontFamily: {
+              display: ['Bebas Neue', 'sans-serif'],
+              body: ['Manrope', 'sans-serif']
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(14px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              'fade-up': 'fadeUp 700ms ease-out both'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "TaxZilla",
+        "description": "Tax strategy, bookkeeping, and financial advisory for high-income W2 earners and small business owners.",
+        "founder": {
+          "@type": "Person",
+          "name": "Chris Lucas"
+        },
+        "slogan": "From Tax Prey to Tax Predator",
+        "areaServed": "United States",
+        "email": "hello@taxzilla.co",
+        "telephone": "+1-256-252-4385",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ashland",
+          "addressRegion": "AL",
+          "addressCountry": "US"
+        },
+        "url": "https://taxzilla.co"
+      }
+    </script>
+  </head>
+  <body class="bg-white font-body text-zillaNavy antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-zillaNavy focus:shadow">
+      Skip to main content
+    </a>
+
+    <header class="bg-[#231f20]/60 backdrop-blur-md shadow-md sticky top-0 z-50 border-b border-[#414042]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="#top" class="flex items-center">
+          <img src="./assets/logo.png" alt="Taxzilla Logo" class="h-14 w-auto">
+        </a>
+
+        <button
+          id="menuButton"
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-md border border-white/30 px-4 py-3 text-white"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          Menu
+        </button>
+
+        <nav class="hidden md:flex space-x-8 items-center" aria-label="Primary navigation">
+          <a href="#about" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">About</a>
+          <a href="#features" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">Features</a>
+          <a href="#contact" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">Contact</a>
+          <a href="./application.html" class="bg-[#D4AF37] hover:bg-[#b5952f] text-[#231f20] px-5 py-2 rounded-md font-bold transition-colors duration-200 shadow-md">Apply Now</a>
+        </nav>
+
+      </div>
+
+      <nav id="mobileMenu" class="hidden md:hidden border-t border-[#414042] bg-[#231f20]/95 px-4 py-4" aria-label="Mobile navigation">
+        <div class="flex flex-col gap-3">
+          <a href="#about" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">About</a>
+          <a href="#features" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">Features</a>
+          <a href="#contact" class="text-white hover:text-[#D4AF37] font-semibold transition-colors duration-200">Contact</a>
+          <a href="./application.html" class="bg-[#D4AF37] hover:bg-[#b5952f] text-[#231f20] px-5 py-2 rounded-md font-bold transition-colors duration-200 shadow-md text-center">Apply Now</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section
+        id="about"
+        class="relative scroll-mt-28 overflow-hidden bg-gradient-to-br from-[#231f20] via-[#2e3192] to-[#231f20] text-white"
+        aria-labelledby="hero-title"
+      >
+        <div id="main-content"></div>
+        <div class="absolute -left-24 top-14 h-64 w-64 rounded-full bg-zillaMint/20 blur-3xl" aria-hidden="true"></div>
+        <div class="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-zillaGold/20 blur-3xl" aria-hidden="true"></div>
+
+        <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8 lg:py-24">
+          <div>
+            <p class="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em]">
+              THE ELITE HYBRID WEALTH SYSTEM: AI SPEED + EXPERT PRECISION
+            </p>
+            <h1 id="hero-title" class="mt-6 font-display text-6xl leading-[0.9] sm:text-7xl lg:text-8xl">
+              Stop Reacting to the IRS.
+              <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Start Attacking Your Taxes.</span>
+            </h1>
+            <p class="mt-6 max-w-xl text-lg text-slate-100">
+              TaxZilla is your financial command center. We pair you with a dedicated tax expert who uses our proprietary AI to track your finances in real-time. Simply send your data-we handle the categorization, flag the loopholes, and deliver Zilla Alerts™ so you never miss a wealth-building move.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a
+                href="./application.html"
+                class="inline-block w-full sm:w-auto bg-[#D4AF37] hover:bg-[#b5952f] text-[#231f20] font-bold py-4 px-8 rounded-md transition-colors duration-300 shadow-[0_4px_14px_0_rgba(212,175,55,0.39)] text-lg uppercase tracking-wide text-center"
+              >
+                Start Your Application
+              </a>
+              <a
+                href="#features"
+                class="w-full sm:w-auto rounded-md border border-white/40 px-6 py-3 text-base font-bold text-white transition hover:bg-white/10 text-center"
+              >
+                See the Workflow
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center lg:justify-center">
+            <img
+              src="./assets/mascot.png"
+              alt="King Zil mascot for TaxZilla"
+              class="h-72 w-auto animate-fade-up object-contain motion-reduce:animate-none sm:h-80 lg:h-[28rem]"
+              width="560"
+              height="560"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="scroll-mt-28 bg-white py-32 border-b border-gray-200" aria-labelledby="features-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <p class="text-sm font-bold tracking-widest text-[#D4AF37] uppercase mb-3">The TaxZilla Advantage</p>
+            <h2 id="features-title" class="text-4xl md:text-5xl font-bold text-[#231f20] mb-6">Your Entire Financial Kingdom. <span class="bg-gradient-to-r from-[#D4AF37] to-[#b5952f] bg-clip-text text-transparent">One System.</span></h2>
+            <p class="text-lg text-[#414042]">Stop relying on fragmented emails and reactive filing. We combine top-tier tax professionals with cutting-edge automation to deliver real-time strategy and tracking to defend your wealth.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-[#2e3192] p-8 rounded-xl shadow-2xl hover:-translate-y-2 transition-transform duration-300 border-b-4 border-[#D4AF37]">
+              <div class="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center mb-6">
+                <svg class="h-7 w-7 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="7" y="2" width="10" height="20" rx="2"></rect>
+                  <line x1="11" y1="18" x2="13" y2="18"></line>
+                  <line x1="10" y1="5" x2="14" y2="5"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Your Dedicated Expert</h3>
+              <p class="text-gray-300">Get paired with a real, licensed tax professional (CPA/EA) who understands your exact financial picture and is available for strategy, not just data entry.</p>
+            </div>
+
+            <div class="bg-[#2e3192] p-8 rounded-xl shadow-2xl hover:-translate-y-2 transition-transform duration-300 border-b-4 border-[#D4AF37]">
+              <div class="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center mb-6">
+                <svg class="h-7 w-7 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Proactive Zilla Alerts™</h3>
+              <p class="text-gray-300">We monitor your books in the background. Get real-time notifications when our AI or your advisor spots a new tax loophole or an immediate wealth-building opportunity.</p>
+            </div>
+
+            <div class="bg-[#2e3192] p-8 rounded-xl shadow-2xl hover:-translate-y-2 transition-transform duration-300 border-b-4 border-[#D4AF37]">
+              <div class="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center mb-6">
+                <svg class="h-7 w-7 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M9 12l2 2 4-4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">The Tax Titan Protocol</h3>
+              <p class="text-gray-300">Simply send us your data, and we handle the rest. Our system automatically categorizes your finances, flags anomalies, and shifts you into a protected entrepreneur.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="bg-gradient-to-b from-white to-slate-100 py-24 border-b border-gray-200" aria-labelledby="pricing-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-14">
+            <p class="text-sm font-bold tracking-widest text-[#D4AF37] uppercase mb-3">Pricing & Paths</p>
+            <h2 id="pricing-title" class="text-4xl md:text-5xl font-bold text-[#231f20] mb-5">Choose Your Service Tier</h2>
+            <p class="text-lg text-[#414042]">Whether you are filing a straightforward return or building a full wealth fortress, TaxZilla meets you at the right level.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="rounded-2xl border border-white/60 bg-white/70 p-8 shadow-xl backdrop-blur" aria-label="Standard Filing tier">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2e3192]">The Standard Filer</p>
+              <h3 class="mt-3 text-2xl font-bold text-[#231f20]">Standard Filing</h3>
+              <p class="mt-4 text-[#414042]">Perfect for simple W2 earners who want their taxes done right, fast, and protected by an expert.</p>
+              <p class="mt-6 rounded-lg bg-[#2e3192]/10 px-4 py-3 text-sm font-semibold text-[#2e3192]">Professional CPA Review included.</p>
+            </article>
+
+            <article class="relative rounded-2xl border-2 border-[#D4AF37] bg-white/85 p-8 shadow-2xl backdrop-blur" aria-label="Growth Strategy tier">
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#D4AF37] px-4 py-1 text-xs font-bold uppercase tracking-[0.14em] text-[#231f20]">Most Popular</span>
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2e3192]">The Rising Professional</p>
+              <h3 class="mt-3 text-2xl font-bold text-[#231f20]">The Growth Strategy</h3>
+              <p class="mt-4 text-[#414042]">For high earners and side-hustlers moving from Tax Prey to Tax Predator.</p>
+              <p class="mt-6 rounded-lg bg-[#D4AF37]/20 px-4 py-3 text-sm font-semibold text-[#231f20]">AI-Powered Bookkeeping + Zilla Alerts™.</p>
+            </article>
+
+            <article class="rounded-2xl border border-white/60 bg-white/70 p-8 shadow-xl backdrop-blur" aria-label="Full Titan Protocol tier">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2e3192]">The Wealth Fortress</p>
+              <h3 class="mt-3 text-2xl font-bold text-[#231f20]">Full Titan Protocol</h3>
+              <p class="mt-4 text-[#414042]">Complete tax-free wealth engineering for business owners and high-net-worth individuals.</p>
+              <p class="mt-6 rounded-lg bg-[#2e3192]/10 px-4 py-3 text-sm font-semibold text-[#2e3192]">Unlimited Strategy Sessions + Full Entity Defense.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="scroll-mt-28 bg-[#2e3192] py-20 relative overflow-hidden border-b border-gray-200" aria-labelledby="contact-title">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white opacity-5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div class="lg:w-1/2">
+            <h2 id="contact-title" class="text-4xl md:text-5xl font-bold text-white mb-6">Let Us Build Your <br><span class="text-[#D4AF37]">Tax Advantage</span></h2>
+            <p class="text-lg text-gray-200 mb-8 max-w-lg">
+              Ready to stop reacting and start attacking your tax strategy? Apply now and our team will review your profile for monthly bookkeeping and strategic planning fit.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="./application.html" class="inline-block w-full sm:w-auto bg-[#D4AF37] hover:bg-[#b5952f] text-[#231f20] font-bold py-4 px-8 rounded-md transition-colors duration-300 shadow-lg text-center text-lg uppercase tracking-wide">
+                Start Application
+              </a>
+              <a href="mailto:hello@taxzilla.co" class="inline-block w-full sm:w-auto bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#231f20] font-bold py-4 px-8 rounded-md transition-colors duration-300 text-center text-lg uppercase tracking-wide">
+                Email Us
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:w-1/3 w-full bg-[#231f20] p-8 rounded-xl shadow-2xl border border-[#414042]">
+            <h3 class="text-2xl font-bold text-white mb-6 border-b border-[#414042] pb-4">Contact Information</h3>
+            <ul class="space-y-4 text-gray-300 text-lg">
+              <li class="flex items-start">
+                <span class="text-[#D4AF37] font-bold mr-3 w-24">Founder:</span> Chris Lucas
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#D4AF37] font-bold mr-3 w-24">Location:</span> Ashland, AL
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#D4AF37] font-bold mr-3 w-24">Email:</span>
+                <a href="mailto:hello@taxzilla.co" class="hover:text-white transition-colors">hello@taxzilla.co</a>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#D4AF37] font-bold mr-3 w-24">Phone:</span>
+                <a href="tel:+12562524385" class="hover:text-white transition-colors">+1 (256) 252-4385</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white py-12 border-t border-gray-200" role="contentinfo">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+        
+        <div class="flex items-center space-x-4 mb-6 md:mb-0">
+          <img src="./assets/mascot.png" alt="King Zil Mascot" class="h-24 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 mb-6 drop-shadow-md">
+        </div>
+
+        <div class="text-center md:text-right text-sm text-[#414042]">
+          <p class="mb-2 font-semibold text-[#2e3192] text-lg">
+            Ready to build your tax advantage?
+          </p>
+          <p class="mb-4">
+            <a href="mailto:hello@taxzilla.co" class="text-[#D4AF37] hover:text-[#b5952f] transition-colors duration-200 text-xl font-bold">
+              hello@taxzilla.co
+            </a>
+          </p>
+          <p class="text-xs text-gray-500">&copy; 2026 Taxzilla. All rights reserved. | <span class="text-[#2e3192] font-medium">Tax Strategy • Bookkeeping • Financial Advisory</span></p>
+        </div>
+
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+          const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+          menuButton.setAttribute('aria-expanded', String(!expanded));
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener('click', () => {
+            menuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

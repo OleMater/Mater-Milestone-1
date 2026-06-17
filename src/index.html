@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TaxZilla — Zilla-Engine Interactive Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zillaNavy: '#231f20',
+              zillaGold: '#D4AF37',
+              zillaSteel: '#414042',
+              zillaMint: '#2e3192',
+              zillaGoldDark: '#b5952f'
+            },
+            fontFamily: {
+              display: ['Bebas Neue', 'sans-serif'],
+              body: ['Manrope', 'sans-serif']
+            }
+          }
+        }
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white font-body text-zillaNavy">
+    <div class="max-w-6xl mx-auto p-6">
+      <header class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-4">
+          <img src="/assets/logo.png" alt="TaxZilla Logo" class="h-12" />
+          <h1 class="text-2xl font-bold">Zilla-Engine — Interactive Test</h1>
+        </div>
+        <div class="text-sm text-zillaSteel">Brand matched Tailwind test harness</div>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <section class="col-span-2 bg-white p-6 rounded-lg shadow">
+          <h2 class="text-lg font-semibold mb-3">Controls</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-sm font-medium mb-1">Filter receipts by category</label>
+              <select id="categorySelect" class="w-full rounded border px-3 py-2">
+              </select>
+              <button id="btnFilter" class="mt-2 inline-block bg-zillaGold text-zillaNavy font-bold px-4 py-2 rounded hover:bg-zillaGoldDark">Filter</button>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Find receipt by ID</label>
+              <div class="flex gap-2">
+                <input id="receiptIdInput" type="text" placeholder="id" class="flex-1 rounded border px-3 py-2">
+                <button id="btnFind" class="bg-zillaMint text-white px-4 py-2 rounded">Find</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Sort mileage</label>
+              <div class="flex gap-2">
+                <select id="sortOrder" class="rounded border px-3 py-2">
+                  <option value="asc">Ascending</option>
+                  <option value="desc">Descending</option>
+                </select>
+                <button id="btnSort" class="bg-zillaMint text-white px-4 py-2 rounded">Sort</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Binary search mileage by reading</label>
+              <div class="flex gap-2">
+                <input id="mileageReading" type="number" placeholder="odometer" class="flex-1 rounded border px-3 py-2">
+                <button id="btnBin" class="bg-zillaGold text-zillaNavy px-4 py-2 rounded">Search</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Aggregations & Reports</label>
+              <div class="flex flex-col gap-2">
+                <button id="btnTotalMiles" class="bg-zillaMint text-white px-4 py-2 rounded">Total Business Miles</button>
+                <button id="btnGroupVendors" class="bg-zillaGold text-zillaNavy px-4 py-2 rounded">Group Receipts by Vendor</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Validation</label>
+              <div class="flex gap-2">
+                <button id="btnValidateReceipt" class="bg-zillaMint text-white px-4 py-2 rounded">Validate Receipt</button>
+                <button id="btnValidateMileage" class="bg-zillaGold text-zillaNavy px-4 py-2 rounded">Validate Mileage</button>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mt-6 font-semibold">Sample Data (editable)</h3>
+          <textarea id="dataArea" rows="10" class="w-full mt-2 rounded border p-3 font-mono text-sm">{
+  "receipts": [
+    { "id": 1, "amount": 123.45, "vendorName": "Acme Supplies", "category": "Office Supplies", "receiptDate": "2025-06-01T12:00:00Z", "note": "Pens" },
+    { "id": 2, "amount": 55.5, "vendorName": "Shell", "category": "Gas", "receiptDate": "2025-06-02T10:00:00Z" },
+    { "id": 3, "amount": 400, "vendorName": "Acme Supplies", "category": "Tools", "receiptDate": "2025-06-03T09:00:00Z" }
+  ],
+  "mileage": [
+    { "id": 1, "date": "2025-06-01T08:00:00Z", "startOdometer": 1000, "endOdometer": 1015, "destination": "Client Office", "purpose": "Business" },
+    { "id": 2, "date": "2025-06-02T09:00:00Z", "startOdometer": 1015, "endOdometer": 1030, "destination": "Airport", "purpose": "Business" },
+    { "id": 3, "date": "2025-06-02T15:00:00Z", "startOdometer": 1030, "endOdometer": 1035, "destination": "Home", "purpose": "Personal" }
+  ]
+}</textarea>
+        </section>
+
+        <aside class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-lg font-semibold mb-3">Result</h2>
+          <pre id="output" class="whitespace-pre-wrap font-mono text-sm text-zillaSteel"></pre>
+        </aside>
+      </div>
+
+      <footer class="mt-6 text-sm text-gray-500">Serve locally from the `src/` folder, e.g. <code>python -m http.server 8000</code> or <code>npx http-server</code>.</footer>
+    </div>
+
+    <script type="module">
+      // Branding-aligned utility implementations (mirror src/utils/*.ts behavior)
+      const VALID_EXPENSE_CATEGORIES = [
+        "Car Expenses","Bookkeeping","Gas","Marketing","Travel","Software","Office Supplies","Utilities","Tools","Repairs"
+      ];
+
+      function parseData() {
+        try {
+          return JSON.parse(document.getElementById('dataArea').value);
+        } catch (e) {
+          writeOut({ error: 'Invalid JSON: ' + e.message });
+          return null;
+        }
+      }
+
+      function writeOut(obj){
+        document.getElementById('output').textContent = JSON.stringify(obj, null, 2);
+      }
+
+      // Collections
+      function filterReceiptsByCategory(receipts, category) {
+        return receipts.filter(r => r.category === category);
+      }
+
+      function sortMileageByDate(logs, order = 'asc'){
+        const copy = [...logs];
+        copy.sort((a,b)=> new Date(a.date) - new Date(b.date));
+        return order === 'asc' ? copy : copy.reverse();
+      }
+
+      // Search
+      function findReceiptById(receipts, id){
+        const numeric = Number(id);
+        if (Number.isNaN(numeric)) return null;
+        return receipts.find(r => r.id === numeric) || null;
+      }
+
+      function binarySearchMileageByReading(sortedLogs, target){
+        let left = 0; let right = sortedLogs.length - 1;
+        while(left<=right){
+          const mid = Math.floor((left+right)/2);
+          const e = sortedLogs[mid];
+          const s = e.startOdometer; const en = e.endOdometer;
+          if (target < s) right = mid -1;
+          else if (target > en) left = mid +1;
+          else return mid;
+        }
+        return -1;
+      }
+
+      // Transformations
+      function prepareMileageForSheet(log){
+        const miles = Math.max(0, log.endOdometer - log.startOdometer);
+        return [ String(log.id), new Date(log.date).toISOString(), String(log.startOdometer), String(log.endOdometer), String(miles), log.destination, log.purpose ];
+      }
+
+      function calculateTotalBusinessMiles(logs){
+        return logs.reduce((acc,l)=> l.purpose === 'Business' ? acc + Math.max(0, l.endOdometer - l.startOdometer) : acc, 0);
+      }
+
+      function groupReceiptsByVendor(receipts){
+        return receipts.reduce((acc,r)=>{
+          const k = (r.vendorName||'(unknown)').trim();
+          if (!acc[k]) acc[k]=[]; acc[k].push(r); return acc;
+        }, {});
+      }
+
+      // Validations
+      function validateReceiptEntry(receipt){
+        const errors=[];
+        if (typeof receipt.amount !== 'number' || receipt.amount <=0) errors.push('amount must be > 0');
+        if (!receipt.vendorName || String(receipt.vendorName).trim()==='') errors.push('vendorName cannot be empty');
+        if (!VALID_EXPENSE_CATEGORIES.includes(receipt.category)) errors.push('invalid category: '+ receipt.category);
+        const d = new Date(receipt.receiptDate); if (isNaN(d.getTime())) errors.push('receiptDate invalid');
+        return { valid: errors.length===0, errors };
+      }
+
+      function validateMileageEntry(log){
+        const errors=[];
+        if (typeof log.startOdometer !== 'number' || typeof log.endOdometer !== 'number') errors.push('odometer must be numbers');
+        else{
+          if (log.startOdometer <0 || log.endOdometer <0) errors.push('odometer must be >=0');
+          if (log.endOdometer <= log.startOdometer) errors.push('endOdometer must be > startOdometer');
+          const miles = log.endOdometer - log.startOdometer; if (miles>1000) errors.push('unrealistic miles >1000');
+        }
+        if (log.purpose !== 'Business' && log.purpose !== 'Personal') errors.push('purpose must be Business or Personal');
+        const d = new Date(log.date); if (isNaN(d.getTime())) errors.push('date invalid');
+        return { valid: errors.length===0, errors };
+      }
+
+      // Wire UI
+      const categorySelect = document.getElementById('categorySelect');
+      VALID_EXPENSE_CATEGORIES.forEach(c=>{
+        const o = document.createElement('option'); o.value = c; o.textContent = c; categorySelect.appendChild(o);
+      });
+
+      document.getElementById('btnFilter').addEventListener('click', ()=>{
+        const data = parseData(); if(!data) return; writeOut(filterReceiptsByCategory(data.receipts||[], categorySelect.value));
+      });
+
+      document.getElementById('btnFind').addEventListener('click', ()=>{
+        const data = parseData(); if(!data) return; const id = document.getElementById('receiptIdInput').value; writeOut(findReceiptById(data.receipts||[], id));
+      });
+
+      document.getElementById('btnSort').addEventListener('click', ()=>{
+        const data = parseData(); if(!data) return; const order = document.getElementById('sortOrder').value; writeOut(sortMileageByDate(data.mileage||[], order));
+      });
+
+      document.getElementById('btnBin').addEventListener('click', ()=>{
+        const data = parseData(); if(!data) return; const target = Number(document.getElementById('mileageReading').value);
+        const sorted = (data.mileage||[]).slice().sort((a,b)=> a.startOdometer - b.startOdometer);
+        const idx = binarySearchMileageByReading(sorted, target); writeOut({ index: idx, entry: idx>=0 ? sorted[idx] : null });
+      });
+
+      document.getElementById('btnTotalMiles').addEventListener('click', ()=>{
+        const data = parseData(); if(!data) return; writeOut({ totalBusinessMiles: calculateTotalBusinessMiles(data.mileage||[]) });
+      });
+
+      document.getElementById('btnGroupVendors').addEventListener('click', ()=>{
+        const data = parseData(); if(!data) return; writeOut(groupReceiptsByVendor(data.receipts||[]));
+      });
+
+      document.getElementById('btnValidateReceipt').addEventListener('click', ()=>{
+        const data = parseData(); if(!data) return; writeOut((data.receipts||[]).map(r=> ({ id: r.id, validation: validateReceiptEntry(r) }))); 
+      });
+
+      document.getElementById('btnValidateMileage').addEventListener('click', ()=>{
+        const data = parseData(); if(!data) return; writeOut((data.mileage||[]).map(m=> ({ id: m.id, validation: validateMileageEntry(m) }))); 
+      });
+    </script>
+  </body>
+</html>

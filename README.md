@@ -62,6 +62,30 @@ ai-engineering-company-project-monorepo/
 4. **Review** each top-level folder `README.md` to understand intended responsibilities (`uis/`, `services/`, `data/`, `skills/`, etc.).
 5. **Start implementing** milestone deliverables in `uis/` and `services/`, reusing `packages/shared/` and `data/` as needed.
 
+## Local development
+
+To serve the project from the repository root and share the same `/assets/` folder across HTML pages:
+
+```bash
+cd /workspaces/Mater-Milestone-1
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000` in your browser and click:
+
+- `src/` for testing the Zilla-Engine
+- `uis/taxzilla-website/` for the main website
+
+
+This is the recommended setup because all pages can resolve shared root-relative asset paths like `/assets/logo.png` and `/assets/mascot.png`.
+
+If you prefer a Node-based server, install a local server and run:
+
+```bash
+npm install -g http-server
+http-server . -p 8000
+```
+
 ---
 
 ## Milestones (reference)

@@ -26,3 +26,5 @@ Notes
   the strings parse to valid dates.
 - Mileage entries include `startOdometer` and `endOdometer` to guard against "backwards" mileage.
 - Expense categories are strictly typed and validated at runtime.
+- Interactive test pages should be served from the repository root so shared assets can be referenced
+  consistently via root-relative paths such as `/assets/logo.png` and `/assets/mascot.png`.
